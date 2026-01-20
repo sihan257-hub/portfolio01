@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sihan Sider | Facebook Ads Strategist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0084ff;
+            --primary-dark: #0066cc;
+            --secondary: #8338ec;
+            --accent: #ff006e;
+            --meta-blue: #1877f2;
+            --meta-purple: #7431f9;
+            --instagram-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            --dark-bg: #0a0a0f;
+            --dark-card: #15151f;
+            --dark-card-hover: #1e1e2d;
+            --text-primary: #f8f9fa;
+            --text-secondary: #adb5bd;
+            --text-muted: #6c757d;
+            --border-color: #2d2d3d;
+            --success: #06d6a0;
+            --warning: #ffd166;
+            --danger: #ef476f;
+            --gradient: linear-gradient(90deg, var(--primary), var(--secondary));
+            --gradient-accent: linear-gradient(90deg, var(--accent), #ff7d00);
+            --meta-gradient: linear-gradient(90deg, var(--meta-blue), var(--meta-purple));
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation Menu */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(45, 45, 61, 0.5);
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--meta-gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .logo-title {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--text-primary);
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: var(--dark-card);
+            z-index: 1001;
+            padding: 80px 30px 30px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .mobile-nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-link:hover {
+            color: var(--primary);
+            padding-left: 10px;
+        }
+        
+        .mobile-nav-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Overlay for mobile menu */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .hero-title span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .hero-role {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(30px);
+            padding-left: 5px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .social-logos {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .social-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .social-logo.facebook {
+            background: var(--meta-blue);
+        }
+        
+        .social-logo.instagram {
+            background: var(--instagram-gradient);
+        }
+        
+        .social-logo.meta {
+            background: var(--meta-gradient);
+        }
+        
+        .social-logo:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
+        
+        .cta-button:hover::after {
+            left: 100%;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 50%, rgba(58, 134, 255, 0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+        
+        /* Facebook Ad Visual Animation */
+        .ad-visual-container {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 45%;
+            max-width: 550px;
+            height: 500px;
+            opacity: 0;
+            transform: translateY(-50%) translateX(100px);
+            z-index: 1;
+        }
+        
+        .ad-visual {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        /* Facebook Ad Mockup */
+        .facebook-ad {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 350px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: floatAd 6s ease-in-out infinite;
+        }
+        
+        .facebook-ad-header {
+            height: 50px;
+            background: var(--meta-blue);
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .facebook-ad-header i {
+            margin-right: 10px;
+        }
+        
+        .facebook-ad-content {
+            padding: 15px;
+        }
+        
+        .ad-image {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-image::after {
+            content: 'SALE 50% OFF';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        .ad-text {
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .ad-cta {
+            background: var(--meta-blue);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: var(--transition);
+        }
+        
+        .ad-cta:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* E-commerce Visual */
+        .ecommerce-visual {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 250px;
+            height: 120px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            animation: floatEcommerce 7s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .ecommerce-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .ecommerce-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .ecommerce-stats {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .ecommerce-stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+        
+        .stat-label {
+            font-size: 0.7rem;
+            color: #666;
+        }
+        
+        .cart-animation {
+            position: absolute;
+            right: 15px;
+            top: 40px;
+            color: var(--success);
+            animation: cartMove 4s linear infinite;
+        }
+        
+        /* Data Chart Animation */
+        .data-chart {
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            width: 200px;
+            height: 150px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            animation: floatChart 8s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+        
+        .chart-header {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .chart-container {
+            width: 100%;
+            height: 80px;
+            position: relative;
+        }
+        
+        .chart-bar {
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            background: var(--primary);
+            border-radius: 3px 3px 0 0;
+            animation: growBar 4s ease-in-out infinite;
+        }
+        
+        .chart-bar:nth-child(1) {
+            left: 10px;
+            height: 60%;
+            animation-delay: 0s;
+        }
+        
+        .chart-bar:nth-child(2) {
+            left: 40px;
+            height: 85%;
+            background: var(--secondary);
+            animation-delay: 0.2s;
+        }
+        
+        .chart-bar:nth-child(3) {
+            left: 70px;
+            height: 45%;
+            background: var(--accent);
+            animation-delay: 0.4s;
+        }
+        
+        .chart-bar:nth-child(4) {
+            left: 100px;
+            height: 70%;
+            background: var(--success);
+            animation-delay: 0.6s;
+        }
+        
+        .chart-bar:nth-child(5) {
+            left: 130px;
+            height: 95%;
+            background: var(--meta-blue);
+            animation-delay: 0.8s;
+        }
+        
+        /* Animations */
+        @keyframes floatAd {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes floatEcommerce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes floatChart {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes cartMove {
+            0% { transform: translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateX(-50px); opacity: 0; }
+        }
+        
+        @keyframes growBar {
+            0%, 100% { height: 0%; }
+            50% { height: var(--height); }
+        }
+        
+        /* About Section */
+        #about {
+            background-color: rgba(10, 10, 15, 0.8);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Services Section */
+        #services {
+            position: relative;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--dark-card);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: var(--dark-card-hover);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .service-card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: var(--text-secondary);
+        }
+        
+        /* Skills Section */
+        #skills {
+            background-color: rgba(10, 10, 15, 0.8);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-item {
+            background: var(--dark-card);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+            background: var(--dark-card-hover);
+        }
+        
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .skill-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .skill-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Process Section */
+        .process-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+        }
+        
+        .process-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient);
+            z-index: 0;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--dark-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            background: var(--gradient);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+        
+        .step-content {
+            background: var(--dark-card);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            flex-grow: 1;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .step-content:hover {
+            transform: translateX(10px);
+            background: var(--dark-card-hover);
+        }
+        
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* Tracking Section */
+        #tracking {
+            background-color: rgba(10, 10, 15, 0.8);
+        }
+        
+        .tracking-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .tracking-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        
+        .tracking-text p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        
+        .tracking-visual {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        
+        .tracking-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* CTA Section */
+        #cta {
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 16px 40px;
+            background: transparent;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .cta-button-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .email-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .email-contact i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .email-contact a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .email-contact a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        .cta-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(58, 134, 255, 0.05) 0%, transparent 70%);
+            z-index: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-card);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-title {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link.facebook {
+            background: var(--meta-blue);
+        }
+        
+        .social-link.instagram {
+            background: var(--instagram-gradient);
+        }
+        
+        .social-link.meta {
+            background: var(--meta-gradient);
+        }
+        
+        .social-link.whatsapp {
+            background: #25D366;
+        }
+        
+        .social-link.email {
+            background: var(--accent);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+        }
+        
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-item a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .ad-visual-container {
+                width: 40%;
+                right: 2%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content, .tracking-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.4rem;
+            }
+            
+            .ad-visual-container {
+                position: relative;
+                width: 100%;
+                max-width: 600px;
+                height: 400px;
+                margin: 40px auto 0;
+                transform: translateY(0) translateX(0);
+                right: auto;
+                top: auto;
+                order: 2;
+            }
+            
+            .hero-content {
+                order: 1;
+            }
+            
+            #hero {
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .facebook-ad {
+                right: 50%;
+                transform: translateX(50%);
+            }
+            
+            .ecommerce-visual {
+                left: 10%;
+                bottom: 50px;
+            }
+            
+            .data-chart {
+                top: 50px;
+                left: auto;
+                right: 10%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .hero-role {
+                font-size: 1.1rem;
+            }
+            
+            .process-container::before {
+                left: 20px;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button, .cta-button-secondary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .ad-visual-container {
+                height: 350px;
+            }
+            
+            .facebook-ad {
+                width: 240px;
+                height: 300px;
+            }
+            
+            .ecommerce-visual {
+                width: 200px;
+                height: 100px;
+                bottom: 30px;
+            }
+            
+            .data-chart {
+                width: 180px;
+                height: 130px;
+                top: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-title {
+                font-size: 2.2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .ad-visual-container {
+                height: 300px;
+            }
+            
+            .facebook-ad {
+                width: 200px;
+                height: 280px;
+            }
+            
+            .ecommerce-visual {
+                width: 170px;
+                height: 90px;
+                padding: 10px;
+            }
+            
+            .data-chart {
+                width: 150px;
+                height: 110px;
+                padding: 10px;
+            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translate(0, 0) !important;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-top: 4px solid var(--primary);
+            border-right: 4px solid var(--secondary);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div>
+                    <div class="logo-text">Sihan Sider</div>
+                    <div class="logo-title">Facebook Ads Strategist</div>
+                </div>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#tracking" class="nav-link">Tracking</a>
+                <a href="#cta" class="nav-link">Contact</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-nav-links">
+            <a href="#hero" class="mobile-nav-link">Home</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#services" class="mobile-nav-link">Services</a>
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#process" class="mobile-nav-link">Process</a>
+            <a href="#tracking" class="mobile-nav-link">Tracking</a>
+            <a href="#cta" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Overlay for mobile menu -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" id="heroTitle">Sihan Sider</h1>
+                <p class="hero-subtitle" id="heroSubtitle">Reduce Your Facebook Ad Waste</p>
+                <div class="hero-role" id="heroRole">Facebook Ads Strategist & E-commerce Growth Expert</div>
+                <p class="hero-description" id="heroDescription">I help entrepreneurs optimize their Facebook & Instagram ad campaigns, identify funnel leaks, and implement advanced tracking to reduce budget waste and maximize ROAS.</p>
+                
+                <div class="social-logos" id="socialLogos">
+                    <a href="https://www.facebook.com/sihansikder2021" target="_blank" class="social-logo facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-logo instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <div class="social-logo meta">
+                        <i class="fab fa-meta"></i>
+                    </div>
+                </div>
+                
+                <a href="#cta" class="cta-button" id="heroCta">Book a Free Strategy Call</a>
+            </div>
+        </div>
+        
+        <!-- Facebook Ad Visual Animation -->
+        <div class="ad-visual-container" id="adVisual">
+            <div class="ad-visual">
+                <!-- Facebook Ad Mockup -->
+                <div class="facebook-ad">
+                    <div class="facebook-ad-header">
+                        <i class="fab fa-facebook"></i> Facebook Ad
+                    </div>
+                    <div class="facebook-ad-content">
+                        <div class="ad-image"></div>
+                        <div class="ad-text">
+                            <strong>E-commerce Store</strong> - Boost your sales with targeted Facebook ads. Limited time offer!
+                        </div>
+                        <button class="ad-cta">Shop Now</button>
+                    </div>
+                </div>
+                
+                <!-- E-commerce Visual -->
+                <div class="ecommerce-visual">
+                    <div class="ecommerce-header">
+                        <div class="ecommerce-title">Sales Dashboard</div>
+                        <div class="cart-animation">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="ecommerce-stats">
+                        <div class="ecommerce-stat">
+                            <div class="stat-value">+42%</div>
+                            <div class="stat-label">Conversions</div>
+                        </div>
+                        <div class="ecommerce-stat">
+                            <div class="stat-value">-35%</div>
+                            <div class="stat-label">CPC</div>
+                        </div>
+                        <div class="ecommerce-stat">
+                            <div class="stat-value">3.8x</div>
+                            <div class="stat-label">ROAS</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Chart Animation -->
+                <div class="data-chart">
+                    <div class="chart-header">Campaign Performance</div>
+                    <div class="chart-container">
+                        <div class="chart-bar" style="--height: 60%"></div>
+                        <div class="chart-bar" style="--height: 85%"></div>
+                        <div class="chart-bar" style="--height: 45%"></div>
+                        <div class="chart-bar" style="--height: 70%"></div>
+                        <div class="chart-bar" style="--height: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image" id="aboutImage">
+                    <div style="width:100%;height:400px;background:var(--gradient);opacity:0.1;border-radius:var(--border-radius);"></div>
+                </div>
+                <div class="about-text">
+                    <h2 id="aboutTitle">Turning Ad Spend into Revenue</h2>
+                    <p id="aboutText1">With over 5 years of experience in Facebook and Instagram advertising, I've helped businesses of all sizes optimize their ad strategies to reduce wasteful spending and improve conversion rates.</p>
+                    <p id="aboutText2">My approach combines data analysis with creative optimization to identify exactly where your funnel is leaking customers and implement precise tracking to measure what truly matters.</p>
+                    <div class="stats" id="aboutStats">
+                        <div class="stat-item">
+                            <div class="stat-number">40%+</div>
+                            <div class="stat-label">Avg. ROAS Increase</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">$2M+</div>
+                            <div class="stat-label">Ad Spend Managed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Clients Helped</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What I Do</h2>
+                <p class="section-subtitle">Comprehensive Facebook & Instagram advertising services to optimize your campaigns and maximize results</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" id="service1">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Facebook Ad Campaign Audit</h3>
+                    <p>In-depth analysis of your current Facebook & Instagram ad campaigns to identify performance gaps, budget waste, and optimization opportunities.</p>
+                </div>
+                <div class="service-card" id="service2">
+                    <div class="service-icon">
+                        <i class="fas fa-funnel-dollar"></i>
+                    </div>
+                    <h3>Funnel Analysis & Optimization</h3>
+                    <p>Identify exactly where potential customers drop off in your conversion funnel and implement data-driven fixes to improve conversion rates.</p>
+                </div>
+                <div class="service-card" id="service3">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Facebook Pixel Setup</h3>
+                    <p>Proper implementation and configuration of Facebook Pixel to ensure accurate tracking of conversions, events, and customer behavior.</p>
+                </div>
+                <div class="service-card" id="service4">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Server-Side Tracking</h3>
+                    <p>Implement advanced server-side tracking to overcome iOS 14+ limitations and ensure data accuracy for better optimization decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">Specialized knowledge in Facebook advertising and conversion optimization</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-item" id="skill1">
+                    <div class="skill-icon">
+                        <i class="fab fa-facebook-square"></i>
+                    </div>
+                    <h3>Facebook & Instagram Ads</h3>
+                    <p>Campaign strategy, audience targeting, creative optimization, and performance analysis across Facebook's advertising ecosystem.</p>
+                </div>
+                <div class="skill-item" id="skill2">
+                    <div class="skill-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Ad Account Audit</h3>
+                    <p>Comprehensive review of ad account structure, budget allocation, bidding strategies, and campaign performance to identify optimization opportunities.</p>
+                </div>
+                <div class="skill-item" id="skill3">
+                    <div class="skill-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3>Funnel Analysis</h3>
+                    <p>Mapping customer journeys, identifying drop-off points, and implementing improvements to increase conversion rates at every stage.</p>
+                </div>
+                <div class="skill-item" id="skill4">
+                    <div class="skill-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>Advanced Tracking</h3>
+                    <p>Facebook Pixel, Conversions API, server-side tracking, and event configuration to ensure accurate data collection for optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Process</h2>
+                <p class="section-subtitle">A systematic approach to identifying and fixing ad performance issues</p>
+            </div>
+            <div class="process-container">
+                <div class="process-step" id="step1">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Analyze</h3>
+                        <p>Comprehensive audit of your current Facebook ad account, campaign structure, audience targeting, and conversion tracking setup.</p>
+                    </div>
+                </div>
+                <div class="process-step" id="step2">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Detect Waste</h3>
+                        <p>Identify areas of budget waste, underperforming audiences, inefficient bidding strategies, and funnel leaks that drain your ad spend.</p>
+                    </div>
+                </div>
+                <div class="process-step" id="step3">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Fix & Track</h3>
+                        <p>Implement optimizations, fix tracking issues, set up proper event tracking, and ensure accurate data collection for future decisions.</p>
+                    </div>
+                </div>
+                <div class="process-step" id="step4">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Scale</h3>
+                        <p>Once campaigns are optimized and tracking is accurate, systematically scale winning strategies while maintaining efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Section -->
+    <section id="tracking">
+        <div class="container">
+            <div class="tracking-content">
+                <div class="tracking-text">
+                    <h2 id="trackingTitle">Data Accuracy is Everything</h2>
+                    <p id="trackingText1">With iOS 14+ changes affecting traditional tracking methods, accurate data collection is more critical than ever for Facebook advertising success.</p>
+                    <p id="trackingText2">I implement advanced tracking solutions including Facebook Pixel, Conversions API, and server-side tracking to ensure you have reliable data for optimization decisions.</p>
+                    <p id="trackingText3">Without accurate tracking, you're making optimization decisions based on incomplete or incorrect data—essentially wasting your ad budget.</p>
+                </div>
+                <div class="tracking-visual" id="trackingVisual">
+                    <div style="width:100%;height:400px;background:var(--gradient-accent);opacity:0.1;border-radius:var(--border-radius);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <div class="cta-background"></div>
+        <div class="container">
+            <div class="cta-container">
+                <h2 class="cta-title" id="ctaTitle">Ready to Reduce Your Ad Waste?</h2>
+                <p class="cta-description" id="ctaDescription">Book a free 30-minute strategy call to analyze your current Facebook ad performance and identify immediate opportunities for improvement.</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://wa.me/8801914795242" target="_blank" class="cta-button" id="ctaButton">
+                        <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                    </a>
+                    <a href="mailto:sihan25700@gmail.com" class="cta-button-secondary" id="emailCta">
+                        <i class="fas fa-envelope"></i> Email Me
+                    </a>
+                </div>
+                
+                <div class="email-contact" id="emailContact">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:sihan25700@gmail.com">sihan25700@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Sihan Sider</div>
+                <div class="footer-title">Facebook Ads Strategist & E-commerce Growth Expert</div>
+                <div class="footer-links">
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#services" class="footer-link">Services</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#process" class="footer-link">Process</a>
+                    <a href="#tracking" class="footer-link">Tracking</a>
+                    <a href="#cta" class="footer-link">Contact</a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/sihansikder2021" target="_blank" class="social-link facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link meta">
+                        <i class="fab fa-meta"></i>
+                    </a>
+                    <a href="https://wa.me/8801914795242" target="_blank" class="social-link whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:sihan25700@gmail.com" class="social-link email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:sihan25700@gmail.com">sihan25700@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801914795242" target="_blank">+8801914795242</a>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    &copy; <span id="currentYear"></span> Sihan Sider. All rights reserved. | Facebook Ads Strategist
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Hide loading screen after page loads
+            setTimeout(function() {
+                document.getElementById('loadingScreen').classList.add('hidden');
+                
+                // Trigger initial animations
+                setTimeout(initAnimations, 300);
+            }, 1000);
+            
+            // Initialize scroll animations
+            initScrollAnimations();
+            
+            // Add micro-interactions to buttons
+            initButtonInteractions();
+            
+            // Initialize email click tracking
+            initEmailTracking();
+            
+            // Initialize navigation
+            initNavigation();
+            
+            // Initialize scroll-based navbar effects
+            initNavbarScroll();
+            
+            // Initialize chart animations
+            initChartAnimations();
+        });
+        
+        // Initialize animations on page load
+        function initAnimations() {
+            // Hero section animations
+            const heroElements = [
+                document.getElementById('heroTitle'),
+                document.getElementById('heroSubtitle'),
+                document.getElementById('heroRole'),
+                document.getElementById('heroDescription'),
+                document.getElementById('socialLogos'),
+                document.getElementById('heroCta'),
+                document.getElementById('adVisual')
+            ];
+            
+            heroElements.forEach((el, index) => {
+                if (el) {
+                    setTimeout(() => {
+                        el.classList.add('fade-in');
+                    }, 200 * index);
+                }
+            });
+            
+            // About section animations
+            const aboutElements = [
+                document.getElementById('aboutImage'),
+                document.getElementById('aboutTitle'),
+                document.getElementById('aboutText1'),
+                document.getElementById('aboutText2'),
+                document.getElementById('aboutStats')
+            ];
+            
+            aboutElements.forEach((el, index) => {
+                if (el) {
+                    setTimeout(() => {
+                        el.classList.add('fade-in');
+                    }, 200 * index + 400);
+                }
+            });
+            
+            // CTA section animations
+            const ctaElements = [
+                document.getElementById('ctaTitle'),
+                document.getElementById('ctaDescription'),
+                document.getElementById('ctaButton'),
+                document.getElementById('emailCta'),
+                document.getElementById('emailContact')
+            ];
+            
+            ctaElements.forEach((el, index) => {
+                if (el) {
+                    setTimeout(() => {
+                        el.classList.add('fade-in');
+                    }, 200 * index + 600);
+                }
+            });
+        }
+        
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            // Elements to animate on scroll
+            const animatedElements = document.querySelectorAll(
+                '.service-card, .skill-item, .process-step, #trackingTitle, #trackingText1, #trackingText2, #trackingText3, #trackingVisual'
+            );
+            
+            // Create Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            // Observe each animated element
+            animatedElements.forEach(el => {
+                if (el) observer.observe(el);
+            });
+        }
+        
+        // Initialize button micro-interactions
+        function initButtonInteractions() {
+            const buttons = document.querySelectorAll('.cta-button, .cta-button-secondary, .social-link, .service-card, .skill-item, .ad-cta');
+            
+            buttons.forEach(button => {
+                // Add hover effect
+                button.addEventListener('mouseenter', function() {
+                    if (this.classList.contains('cta-button') || this.classList.contains('cta-button-secondary') || this.classList.contains('ad-cta')) {
+                        this.style.transform = 'translateY(-5px)';
+                    }
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    if (this.classList.contains('cta-button') || this.classList.contains('cta-button-secondary') || this.classList.contains('ad-cta')) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+                
+                // Add click effect
+                button.addEventListener('mousedown', function() {
+                    if (this.classList.contains('cta-button') || this.classList.contains('cta-button-secondary') || this.classList.contains('ad-cta')) {
+                        this.style.transform = 'scale(0.98)';
+                    }
+                });
+                
+                button.addEventListener('mouseup', function() {
+                    if (this.classList.contains('cta-button') || this.classList.contains('cta-button-secondary') || this.classList.contains('ad-cta')) {
+                        this.style.transform = '';
+                    }
+                });
+            });
+        }
+        
+        // Initialize email tracking
+        function initEmailTracking() {
+            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+            emailLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // You can add analytics tracking here
+                    console.log('Email link clicked:', this.href);
+                });
+            });
+        }
+        
+        // Initialize navigation
+        function initNavigation() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileNavClose = document.getElementById('mobileNavClose');
+            const mobileNav = document.getElementById('mobileNav');
+            const navOverlay = document.getElementById('navOverlay');
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+            
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileNav.classList.add('active');
+                navOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close mobile menu
+            mobileNavClose.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                navOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Close mobile menu when clicking overlay
+            navOverlay.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                navOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Update active navigation link on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Close mobile menu when clicking a link
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            mobileNav.classList.remove('active');
+                            navOverlay.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Initialize navbar scroll effects
+        function initNavbarScroll() {
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+        
+        // Initialize chart animations
+        function initChartAnimations() {
+            const chartBars = document.querySelectorAll('.chart-bar');
+            
+            // Set initial height to 0 for animation
+            chartBars.forEach(bar => {
+                bar.style.height = '0%';
+            });
+            
+            // Start animation after a delay
+            setTimeout(() => {
+                chartBars.forEach(bar => {
+                    bar.style.animation = 'growBar 4s ease-in-out infinite';
+                });
+            }, 1000);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Parallax effect for hero background
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroBackground = document.querySelector('.hero-background');
+            
+            if (heroBackground) {
+                heroBackground.style.transform = `translateY(${scrolled * 0.05}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
